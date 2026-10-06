@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basic Logic Tasks</title>
+</head>
+<body>
+    <h1>JavaScript Basic Logic Tasks</h1>
+    <!-- Task 1 -->
+    <h2>1. Reverse a Number</h2>
+    <p id="reverse"></p>
+    <!-- Task 2 -->
+    <h2>2. Sum of Digits</h2>
+    <p id="sumDigits"></p>
+    <!-- Task 3 -->
+    <h2>3. Check Palindrome</h2>
+    <p id="palindrome"></p>
+    <!-- Task 4 -->
+    <h2>4. Calculate Simple Interest</h2>
+    <p id="interest"></p>
+    <!-- Task 5 -->
+    <h2>5. Calculate Average of Three Numbers</h2>
+    <p id="average"></p>
+    <script>
+        // TASK 1: REVERSE A NUMBER
+        let number = 12345;
+        let reverse = 0;
+        let temp = number;
+        while (temp > 0) {
+            let digit = temp % 10;
+            reverse = reverse * 10 + digit;
+            temp = Math.floor(temp / 10);
+        }
+        document.getElementById("reverse").innerHTML =
+            "Number: " + number + "<br>" +
+            "Reverse: " + reverse;
+        // TASK 2: SUM OF DIGITS
+        let num = 4567;
+        let sum = 0;
+        let value = num;
+        while (value > 0) {
+            let digit = value % 10;
+            sum = sum + digit;
+            value = Math.floor(value / 10);
+        }
+        document.getElementById("sumDigits").innerHTML =
+            "Number: " + num + "<br>" +
+            "Sum of Digits: " + sum;
+        // TASK 3: PALINDROME
+        let original = 121;
+        let reversed = 0;
+        let tempNumber = original;
+        while (tempNumber > 0) {
+            let digit = tempNumber % 10;
+            reversed = reversed * 10 + digit;
+            tempNumber = Math.floor(tempNumber / 10);
+        }
+        if (original === reversed) {
+            document.getElementById("palindrome").innerHTML =
+                original + " is a Palindrome.";
+        } else {
+            document.getElementById("palindrome").innerHTML =
+                original + " is not a Palindrome.";
+        }
+        // TASK 4: SIMPLE INTEREST
+        let principal = 10000;
+        let rate = 5;
+        let time = 2;
+        let simpleInterest =
+            (principal * rate * time) / 100;
+        document.getElementById("interest").innerHTML =
+            "Principal: ₹" + principal + "<br>" +
+            "Rate: " + rate + "%<br>" +
+            "Time: " + time + " years<br>" +
+            "Simple Interest: ₹" + simpleInterest;
+        // TASK 5: AVERAGE OF THREE NUMBERS
+        let first = 80;
+        let second = 75;
+        let third = 90;
+        let average = (first + second + third) / 3;
+        document.getElementById("average").innerHTML =
+            "First Number: " + first + "<br>" +
+            "Second Number: " + second + "<br>" +
+            "Third Number: " + third + "<br>" +
+            "Average: " + average.toFixed(2);
+    </script>
+</body>
+</html>
